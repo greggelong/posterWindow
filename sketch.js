@@ -49,8 +49,19 @@ function setup() {
   background(60,98,170)
  
   let cnt =windowWidth/2-wind.width/2
-  image(capture, cnt+wind.width/5,wind.height/6,wind.width-wind.width/3,wind.height-wind.height/3); 
+  push()
+  if (frt) {
+    scale(-1,1)
+    image(capture, -cnt-wind.width/5,wind.height/6,-wind.width+wind.width/3,wind.height-wind.height/3); 
+  }else{
+    scale(1,1)
+    image(capture, cnt-wind.width/5,wind.height/6,wind.width-wind.width/3,wind.height-wind.height/3); 
+
+  }
+  
+  
   filter(POSTERIZE,3)
+  pop()
   
   image(wind,cnt,0)
    
