@@ -5,17 +5,7 @@ let lasttouch= 0;
 let frt = true;
 let scl = 1
 
-let constraints = {
-  audio: false,
-  video: {
-    facingMode: {
-      exact: "environment"
-    }
-  }    
-  //video: {
-    //facingMode: "user"
-  //} 
-};
+
 function preload(){
   wind = loadImage("win1.png")
 }
@@ -65,16 +55,29 @@ function touchStarted(){
 
   if (timesincelasttouch > 500) {
     if (frt){
-      frt = false
+      var constraints = {
+        audio: false,
+        video: {
+          facingMode: {
+            exact: "environment"
+          }
+        }    
+        //video: {
+          //facingMode: "user"
+        //} 
+      };
+      
       capture = createCapture(VIDEO,constraints);
       capture.size(width/10,height/5)
       capture.hide();
+      frt = false
       
     }else{
-      frt = true
+      
       capture = createCapture(VIDEO);
       capture.size(width/10,height/5)
       capture.hide();
+      frt = true
     }
   
   }
