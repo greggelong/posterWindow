@@ -55,7 +55,8 @@ function setup() {
     image(capture, -cnt-wind.width/5,wind.height/6,-wind.width+wind.width/3,wind.height-wind.height/3); 
   }else{
     scale(1,1)
-    image(capture, cnt-wind.width/5,wind.height/6,wind.width-wind.width/3,wind.height-wind.height/3); 
+    image(capture, cnt+wind.width/5,wind.height/6,wind.width-wind.width/3,wind.height-wind.height/3);
+    
 
   }
   
