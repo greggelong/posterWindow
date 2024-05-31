@@ -45,11 +45,9 @@ function setup() {
  
 
  function draw(){
-  if (frt){
+  
   background(60,98,170)
- }else{
-  background(0)
- }
+ 
   let cnt =windowWidth/2-wind.width/2
   image(capture, cnt+wind.width/5,wind.height/6,wind.width-wind.width/3,wind.height-wind.height/3); 
   filter(POSTERIZE,3)
@@ -66,6 +64,7 @@ function touchStarted(){
 
   if (timesincelasttouch > 500) {
     if (frt){
+      capture.remove();
       var constraints = {
         audio: false,
         video: {
@@ -83,7 +82,7 @@ function touchStarted(){
       frt = false
       
     }else{
-      
+      capture.remove();// need to remove
       capture = createCapture(VIDEO);
       capture.size(width/10,height/5)
       capture.hide();
