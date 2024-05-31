@@ -45,7 +45,7 @@ function setup() {
  
 
  function draw(){
-  background(182,208,226)
+  background(60,98,170)
   let cnt =windowWidth/2-wind.width/2
   image(capture, cnt+wind.width/5,wind.height/6,wind.width-wind.width/3,wind.height-wind.height/3); 
   filter(POSTERIZE,3)
