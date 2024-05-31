@@ -7,7 +7,7 @@ let scl = 1
 
 
 function preload(){
-  wind = loadImage("win1.png")
+  wind = loadImage("win1s.png")
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
